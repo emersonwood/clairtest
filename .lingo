@@ -1,0 +1,14 @@
+tenets:
+  - bots:
+      codelingo/clair:
+        doc: Example tenet that finds all functions.
+        comments: Looks like a function to me.
+        name: find-funcs
+    query: |
+      import (
+        codelingo/ast/php/0.0.0
+      )
+
+      @ clair.comment
+      php.stmt_function({depth: any})
+
